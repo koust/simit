@@ -21,7 +21,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "simit",
-            dependencies: ["iOS/simit"]),
+            dependencies: []),
         .testTarget(
             name: "simitTests",
             dependencies: ["simit"]),
