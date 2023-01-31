@@ -60,6 +60,12 @@ class SimitURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTaskDeleg
         self.dataTask!.resume()
 
         SimitURLProtocol.delegate?.getRequest(request: mutableRequest as URLRequest)
+        
+        if #available(iOS 13.0, *) {
+            server?.start()
+        } else {
+            print("iOS 13 and above")
+        }
     }
 
     override func stopLoading() {

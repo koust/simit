@@ -27,6 +27,10 @@
 		748F1E1B25E2D1860068A159 /* SimitRequestPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1325E2D1860068A159 /* SimitRequestPackage.swift */; };
 		748F1E1C25E2D1860068A159 /* SimitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1425E2D1860068A159 /* SimitConfiguration.swift */; };
 		748F1E1D25E2D1860068A159 /* SimitLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1725E2D1860068A159 /* SimitLoading.swift */; };
+		749C4DA42989D69500E35A1E /* SimitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DA32989D69500E35A1E /* SimitServer.swift */; };
+		749C4DA62989D71500E35A1E /* SimitBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DA52989D71500E35A1E /* SimitBrowser.swift */; };
+		749C4DA82989D74900E35A1E /* SimitConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DA72989D74900E35A1E /* SimitConnection.swift */; };
+		749C4DAC2989D81B00E35A1E /* SimitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DAB2989D81B00E35A1E /* SimitClient.swift */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_42 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
 		OBJ_43 /* simitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* simitTests.swift */; };
@@ -59,6 +63,10 @@
 		748F1E1525E2D1860068A159 /* simit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simit.h; sourceTree = "<group>"; };
 		748F1E1625E2D1860068A159 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748F1E1725E2D1860068A159 /* SimitLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimitLoading.swift; sourceTree = "<group>"; };
+		749C4DA32989D69500E35A1E /* SimitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitServer.swift; sourceTree = "<group>"; };
+		749C4DA52989D71500E35A1E /* SimitBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitBrowser.swift; sourceTree = "<group>"; };
+		749C4DA72989D74900E35A1E /* SimitConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimitConnection.swift; path = ../../../Downloads/SimitConnection.swift; sourceTree = "<group>"; };
+		749C4DAB2989D81B00E35A1E /* SimitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitClient.swift; sourceTree = "<group>"; };
 		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* simitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simitTests.swift; sourceTree = "<group>"; };
 		OBJ_18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -143,6 +151,10 @@
 				748F1E1525E2D1860068A159 /* simit.h */,
 				748F1E1625E2D1860068A159 /* Info.plist */,
 				748F1E1725E2D1860068A159 /* SimitLoading.swift */,
+				749C4DA32989D69500E35A1E /* SimitServer.swift */,
+				749C4DA52989D71500E35A1E /* SimitBrowser.swift */,
+				749C4DA72989D74900E35A1E /* SimitConnection.swift */,
+				749C4DAB2989D81B00E35A1E /* SimitClient.swift */,
 			);
 			name = simit;
 			path = Sources/simit;
@@ -238,9 +250,13 @@
 				748F1E1A25E2D1860068A159 /* SimitURLProtocol.swift in Sources */,
 				748F1E1825E2D1860068A159 /* SimitHelper.swift in Sources */,
 				748F1E1D25E2D1860068A159 /* SimitLoading.swift in Sources */,
+				749C4DA82989D74900E35A1E /* SimitConnection.swift in Sources */,
 				748F1E1B25E2D1860068A159 /* SimitRequestPackage.swift in Sources */,
+				749C4DAC2989D81B00E35A1E /* SimitClient.swift in Sources */,
 				748F1E1C25E2D1860068A159 /* SimitConfiguration.swift in Sources */,
+				749C4DA42989D69500E35A1E /* SimitServer.swift in Sources */,
 				748F1E1925E2D1860068A159 /* SimitURLProtocolDelegate.swift in Sources */,
+				749C4DA62989D71500E35A1E /* SimitBrowser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +388,7 @@
 					"SWIFT_PACKAGE=1",
 					"DEBUG=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
@@ -438,6 +455,7 @@
 					"$(inherited)",
 					"SWIFT_PACKAGE=1",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";

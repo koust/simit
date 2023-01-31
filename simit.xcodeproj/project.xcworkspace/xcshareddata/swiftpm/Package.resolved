@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "simit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/koust/simit",
+      "state" : {
+        "branch" : "master",
+        "revision" : "343cdc4e014b3506a4d5e919838b73da686a5aca"
+      }
+    }
+  ],
+  "version" : 2
+}
