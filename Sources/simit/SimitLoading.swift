@@ -90,7 +90,11 @@ extension SimitLoading:SimitURLProtocolDelegate {
             
             print("==========RESPONSE=========",response)
         }
-        
+        if #available(iOS 13.0, *) {
+            client.start()
+        } else {
+            print("iOS 13 and above")
+        }
         var simitResponse = SimitResponseURL()
         simitResponse.url = response.url?.absoluteString ?? "UNKNOWN RESPONSE URL"
         simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields
