@@ -9,15 +9,32 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>simitPackageDescription.xcscheme_^#shared#^_</key>
+		<key>simitPackageDescription.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>simitPackageTests.xcscheme_^#shared#^_</key>
+		<key>simitPackageTests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>simit::SwiftPMPackageDescription</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>simit::simitPackageTests::ProductTarget</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
