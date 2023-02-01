@@ -33,7 +33,24 @@ public class SimitLoading: NSObject {
     }
     
     private func setDelegate(){
+        // get notified when a service is found
+        ciaoBrowser.serviceFoundHandler = { service in
+            print("Service found")
+            print(service)
+        }
+
+        // register to automatically resolve a service
+        ciaoBrowser.serviceResolvedHandler = { service in
+            print("Service resolved")
+            print(service)
+        }
+
+        ciaoBrowser.serviceRemovedHandler = { service in
+            print("Service removed")
+            print(service)
+        }
         
+        ciaoBrowser.browse(type: .tcp("_simit._tcp"))
         
         SimitURLProtocol.delegate = self
     }
@@ -94,24 +111,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
             print("==========RESPONSE=========",response)
         }
 
-        // get notified when a service is found
-        ciaoBrowser.serviceFoundHandler = { service in
-            print("Service found")
-            print(service)
-        }
 
-        // register to automatically resolve a service
-        ciaoBrowser.serviceResolvedHandler = { service in
-            print("Service resolved")
-            print(service)
-        }
-
-        ciaoBrowser.serviceRemovedHandler = { service in
-            print("Service removed")
-            print(service)
-        }
-        
-        ciaoBrowser.browse(type: .tcp("_simit._tcp"))
         var simitResponse = SimitResponseURL()
         simitResponse.url = response.url?.absoluteString ?? "UNKNOWN RESPONSE URL"
         simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields
