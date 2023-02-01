@@ -30,7 +30,7 @@ struct SimitRequestURL:Codable {
 
 struct SimitResponseURL:Codable {
     //var responseHeader:[AnyHashable:Any]?
-    var responseBody:Data?
+    var responseBody:String?
     var url:String?
     var statusCode:Int?
 }

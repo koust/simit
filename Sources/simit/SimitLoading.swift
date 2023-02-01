@@ -82,7 +82,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
             
             print("==========DATA=========",data.toString() ?? "")
         }
-        packageData.response.responseBody = data
+        packageData.response.responseBody = data.toString() ?? ""
         
         do {
             let dataString = try packageData.toJSON()
