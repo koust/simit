@@ -15,7 +15,7 @@ public class SimitLoading: NSObject {
 
     private var packageData:SimitRequestPackage = SimitRequestPackage()
     
-    let bonjour = BonjourSession(configuration: .init(serviceType: "_simit._tcp", peerName: "client", defaults: .standard, security: .default, invitation: .automatic))
+    let bonjour = BonjourSession(configuration: .init(serviceType: "simit", defaults: .standard, security: .default, invitation: .automatic))
     
     public static func start(configuration:SimitConfiguration? = nil){
         
