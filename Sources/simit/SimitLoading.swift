@@ -56,7 +56,7 @@ public class SimitLoading: NSObject {
         // On small package of data receive.
         bonjour.onReceive = { data, peer in
             
-            print("onReceive",data,peer)
+            print("onReceive",data,peer,String(decoding: data, as: UTF8.self))
         }
 
         // On new peer discovery.
