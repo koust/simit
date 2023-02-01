@@ -20,16 +20,16 @@ struct SimitRequestPackage:Codable {
 }
 
 
-struct SimitRequestURL {
-    var requestHeader:[AnyHashable:Any]?
+struct SimitRequestURL:Codable {
+    //var requestHeader:[AnyHashable:Any]?
     var requestBody:Data?
     var url:String?
     var httpMethod:String?
 }
 
 
-struct SimitResponseURL {
-    var responseHeader:[AnyHashable:Any]?
+struct SimitResponseURL:Codable {
+    //var responseHeader:[AnyHashable:Any]?
     var responseBody:Data?
     var url:String?
     var statusCode:Int?

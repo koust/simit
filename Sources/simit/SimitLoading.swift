@@ -102,7 +102,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
 
         var simitResponse = SimitResponseURL()
         simitResponse.url = response.url?.absoluteString ?? "UNKNOWN RESPONSE URL"
-        simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields
+        //simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields
         simitResponse.statusCode = (response as? HTTPURLResponse)?.statusCode
         
         
@@ -125,7 +125,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
         
         var simitRequest = SimitRequestURL()
         simitRequest.requestBody = request.httpBody
-        simitRequest.requestHeader = request.allHTTPHeaderFields
+        //simitRequest.requestHeader = request.allHTTPHeaderFields
         simitRequest.httpMethod  = request.httpMethod
         simitRequest.url = request.url?.absoluteString ?? "UNKNOWN REQUEST URL"
         
