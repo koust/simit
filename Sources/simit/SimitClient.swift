@@ -26,4 +26,8 @@ class Client {
         }
     }
 
+    
+    func send(message:String){
+        connection?.send(message + " ==== CLIENT")
+    }
 }
