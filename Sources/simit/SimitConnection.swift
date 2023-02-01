@@ -56,7 +56,6 @@ class Connection {
                let message = String(data: data, encoding: .utf8) {
                 print("Connection receiveMessage message: \(message)")
             }
-            self.receiveMessage()
         }
     }
 }
