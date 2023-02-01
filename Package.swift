@@ -15,7 +15,8 @@ let package = Package(
             targets: ["simit"]),
     ],
     dependencies: [
-        .package(url:"https://github.com/koust/simit", from: "1.0.0")
+        .package(url:"https://github.com/koust/simit", from: "1.0.0"),
+        .package(url: "https://github.com/AlTavares/Ciao.git", from: "2.1.1")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

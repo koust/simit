@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Ciao
 
 
 public class SimitLoading: NSObject {
@@ -13,6 +14,8 @@ public class SimitLoading: NSObject {
     private static var configuration:SimitConfiguration? = nil
 
     private var packageData:SimitRequestPackage = SimitRequestPackage()
+    
+    private let ciaoBrowser = CiaoBrowser()
     
     public static func start(configuration:SimitConfiguration? = nil){
         
@@ -90,11 +93,25 @@ extension SimitLoading:SimitURLProtocolDelegate {
             
             print("==========RESPONSE=========",response)
         }
-        if #available(iOS 13.0, *) {
-            client.start()
-        } else {
-            print("iOS 13 and above")
+
+        // get notified when a service is found
+        ciaoBrowser.serviceFoundHandler = { service in
+            print("Service found")
+            print(service)
         }
+
+        // register to automatically resolve a service
+        ciaoBrowser.serviceResolvedHandler = { service in
+            print("Service resolved")
+            print(service)
+        }
+
+        ciaoBrowser.serviceRemovedHandler = { service in
+            print("Service removed")
+            print(service)
+        }
+        
+        ciaoBrowser.browse(type: .tcp("_simit._tcp"))
         var simitResponse = SimitResponseURL()
         simitResponse.url = response.url?.absoluteString ?? "UNKNOWN RESPONSE URL"
         simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields

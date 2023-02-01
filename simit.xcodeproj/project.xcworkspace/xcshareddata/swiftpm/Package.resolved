@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "ciao",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AlTavares/Ciao.git",
+      "state" : {
+        "revision" : "f700069eb50a5cee7d33e61c3aed2e0e524c2473",
+        "version" : "2.1.1"
+      }
+    },
+    {
       "identity" : "simit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/koust/simit",

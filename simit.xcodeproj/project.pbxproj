@@ -27,10 +27,7 @@
 		748F1E1B25E2D1860068A159 /* SimitRequestPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1325E2D1860068A159 /* SimitRequestPackage.swift */; };
 		748F1E1C25E2D1860068A159 /* SimitConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1425E2D1860068A159 /* SimitConfiguration.swift */; };
 		748F1E1D25E2D1860068A159 /* SimitLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748F1E1725E2D1860068A159 /* SimitLoading.swift */; };
-		749C4DA42989D69500E35A1E /* SimitServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DA32989D69500E35A1E /* SimitServer.swift */; };
-		749C4DA62989D71500E35A1E /* SimitBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DA52989D71500E35A1E /* SimitBrowser.swift */; };
-		749C4DAC2989D81B00E35A1E /* SimitClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DAB2989D81B00E35A1E /* SimitClient.swift */; };
-		749C4DAE2989DBE100E35A1E /* SimitConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749C4DAD2989DBE100E35A1E /* SimitConnection.swift */; };
+		749C4DBB298AB59800E35A1E /* Ciao in Frameworks */ = {isa = PBXBuildFile; productRef = 749C4DBA298AB59800E35A1E /* Ciao */; };
 		OBJ_31 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_42 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
 		OBJ_43 /* simitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* simitTests.swift */; };
@@ -63,10 +60,6 @@
 		748F1E1525E2D1860068A159 /* simit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simit.h; sourceTree = "<group>"; };
 		748F1E1625E2D1860068A159 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748F1E1725E2D1860068A159 /* SimitLoading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimitLoading.swift; sourceTree = "<group>"; };
-		749C4DA32989D69500E35A1E /* SimitServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitServer.swift; sourceTree = "<group>"; };
-		749C4DA52989D71500E35A1E /* SimitBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitBrowser.swift; sourceTree = "<group>"; };
-		749C4DAB2989D81B00E35A1E /* SimitClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitClient.swift; sourceTree = "<group>"; };
-		749C4DAD2989DBE100E35A1E /* SimitConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimitConnection.swift; sourceTree = "<group>"; };
 		OBJ_12 /* XCTestManifests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
 		OBJ_13 /* simitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simitTests.swift; sourceTree = "<group>"; };
 		OBJ_18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -80,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				749C4DBB298AB59800E35A1E /* Ciao in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,10 +145,6 @@
 				748F1E1525E2D1860068A159 /* simit.h */,
 				748F1E1625E2D1860068A159 /* Info.plist */,
 				748F1E1725E2D1860068A159 /* SimitLoading.swift */,
-				749C4DA32989D69500E35A1E /* SimitServer.swift */,
-				749C4DA52989D71500E35A1E /* SimitBrowser.swift */,
-				749C4DAB2989D81B00E35A1E /* SimitClient.swift */,
-				749C4DAD2989DBE100E35A1E /* SimitConnection.swift */,
 			);
 			name = simit;
 			path = Sources/simit;
@@ -189,6 +179,9 @@
 			dependencies = (
 			);
 			name = simit;
+			packageProductDependencies = (
+				749C4DBA298AB59800E35A1E /* Ciao */,
+			);
 			productName = simit;
 			productReference = "simit::simit::Product" /* simit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -229,6 +222,7 @@
 			mainGroup = OBJ_5;
 			packageReferences = (
 				74DAC8022989CFB900C2A549 /* XCRemoteSwiftPackageReference "simit" */,
+				749C4DB9298AB59800E35A1E /* XCRemoteSwiftPackageReference "Ciao" */,
 			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
@@ -249,14 +243,10 @@
 			files = (
 				748F1E1A25E2D1860068A159 /* SimitURLProtocol.swift in Sources */,
 				748F1E1825E2D1860068A159 /* SimitHelper.swift in Sources */,
-				749C4DAE2989DBE100E35A1E /* SimitConnection.swift in Sources */,
 				748F1E1D25E2D1860068A159 /* SimitLoading.swift in Sources */,
 				748F1E1B25E2D1860068A159 /* SimitRequestPackage.swift in Sources */,
-				749C4DAC2989D81B00E35A1E /* SimitClient.swift in Sources */,
 				748F1E1C25E2D1860068A159 /* SimitConfiguration.swift in Sources */,
-				749C4DA42989D69500E35A1E /* SimitServer.swift in Sources */,
 				748F1E1925E2D1860068A159 /* SimitURLProtocolDelegate.swift in Sources */,
-				749C4DA62989D71500E35A1E /* SimitBrowser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +538,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		749C4DB9298AB59800E35A1E /* XCRemoteSwiftPackageReference "Ciao" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AlTavares/Ciao.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		74DAC8022989CFB900C2A549 /* XCRemoteSwiftPackageReference "simit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/koust/simit";
@@ -557,6 +555,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		749C4DBA298AB59800E35A1E /* Ciao */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 749C4DB9298AB59800E35A1E /* XCRemoteSwiftPackageReference "Ciao" */;
+			productName = Ciao;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = OBJ_1 /* Project object */;
 }
