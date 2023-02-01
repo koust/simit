@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "ciao",
+      "identity" : "bonjour",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/AlTavares/Ciao.git",
+      "location" : "https://github.com/eugenebokhan/Bonjour.git",
       "state" : {
-        "revision" : "f700069eb50a5cee7d33e61c3aed2e0e524c2473",
-        "version" : "2.1.1"
+        "revision" : "4e2912cddb3dcc8ec48370851ba0eb19f1a3e6af",
+        "version" : "2.1.0"
       }
     },
     {

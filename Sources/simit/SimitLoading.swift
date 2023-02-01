@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Ciao
+import Bonjour
 
 
 public class SimitLoading: NSObject {
@@ -15,7 +15,7 @@ public class SimitLoading: NSObject {
 
     private var packageData:SimitRequestPackage = SimitRequestPackage()
     
-    private let ciaoBrowser = CiaoBrowser()
+    let bonjour = BonjourSession(configuration: .init(serviceType: "_simit._tcp", peerName: "client", defaults: .standard, security: .default, invitation: .automatic))
     
     public static func start(configuration:SimitConfiguration? = nil){
         
@@ -33,38 +33,61 @@ public class SimitLoading: NSObject {
     }
     
     private func setDelegate(){
-        // get notified when a service is found
-        ciaoBrowser.serviceFoundHandler = { service in
-            print("Service found")
-            print(service)
+        bonjour.start()
+        
+        // On start receiving large package of data.
+        bonjour.onStartReceiving = { (resourceName, pr) in
+            
+            print("onStartReceiving",resourceName,pr)
         }
 
-        // register to automatically resolve a service
-        ciaoBrowser.serviceResolvedHandler = { service in
-            print("Service resolved")
-            do {
-                
-               let netService = try service.get()
-               var resolver = CiaoResolver(service:netService)
-                
-                resolver.resolve(withTimeout: 0) { (result: Result<NetService, ErrorDictionary>) in
-                    print(result)
-                }
-            }catch {
-                print("Service resolved error")
-            }
+        // Track large package of data receiving progress.
+        bonjour.onReceiving = { (resourceName,pr, progress) in
+            
+            print("onReceiving",resourceName,pr,progress)
         }
 
-        ciaoBrowser.serviceRemovedHandler = { service in
-            print("Service removed")
-            print(service)
+        // On finish receiving large package of data.
+        bonjour.onFinishReceiving = { (resourceName, pr, localURL, error) in
+            
+            print("onFinishReceiving",resourceName,pr,localURL,error)
         }
-        
-        
-      
 
-        
-        ciaoBrowser.browse(type: .tcp("simit"))
+        // On small package of data receive.
+        bonjour.onReceive = { data, peer in
+            
+            print("onReceive",data,peer)
+        }
+
+        // On new peer discovery.
+        bonjour.onPeerDiscovery = { peer in
+            
+            print("onPeerDiscovery",peer)
+        }
+
+        // On loss of peer.
+        bonjour.onPeerLoss = { peer in
+            
+            print("onPeerLoss",peer)
+        }
+
+        // On connection to peer.
+        bonjour.onPeerConnection = { peer in
+            
+            print("onPeerConnection",peer)
+        }
+
+        // On disconnection from peer.
+        bonjour.onPeerDisconnection = { peer in
+            
+            print("onPeerDisconnection",peer)
+        }
+
+        // On update of list of available peers.
+        bonjour.onAvailablePeersDidChange = { availablePeers in
+            
+            print("availablePeers",availablePeers)
+        }
         
         SimitURLProtocol.delegate = self
     }
