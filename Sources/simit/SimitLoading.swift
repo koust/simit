@@ -42,13 +42,27 @@ public class SimitLoading: NSObject {
         // register to automatically resolve a service
         ciaoBrowser.serviceResolvedHandler = { service in
             print("Service resolved")
-            print(service)
+            do {
+                
+               let netService = try service.get()
+               var resolver = CiaoResolver(service:netService)
+                
+                resolver.resolve(withTimeout: 0) { (result: Result<NetService, ErrorDictionary>) in
+                    print(result)
+                }
+            }catch {
+                print("Service resolved error")
+            }
         }
 
         ciaoBrowser.serviceRemovedHandler = { service in
             print("Service removed")
             print(service)
         }
+        
+        
+      
+
         
         ciaoBrowser.browse(type: .tcp("simit"))
         
