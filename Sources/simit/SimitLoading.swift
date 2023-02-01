@@ -136,7 +136,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
             
             print("==========DATA=========",data.toString() ?? "")
         }
-        
+        bonjour.broadcast(data.toString()?.data(using: .utf8) ?? Data())
         packageData.response.responseBody = data
         
         
