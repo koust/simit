@@ -50,7 +50,7 @@ public class SimitLoading: NSObject {
             print(service)
         }
         
-        ciaoBrowser.browse(type: .tcp("_simit._tcp"))
+        ciaoBrowser.browse(type: .tcp("simit"))
         
         SimitURLProtocol.delegate = self
     }
