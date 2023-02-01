@@ -35,60 +35,6 @@ public class SimitLoading: NSObject {
     private func setDelegate(){
         bonjour.start()
         
-        // On start receiving large package of data.
-        bonjour.onStartReceiving = { (resourceName, pr) in
-            
-            print("onStartReceiving",resourceName,pr)
-        }
-
-        // Track large package of data receiving progress.
-        bonjour.onReceiving = { (resourceName,pr, progress) in
-            
-            print("onReceiving",resourceName,pr,progress)
-        }
-
-        // On finish receiving large package of data.
-        bonjour.onFinishReceiving = { (resourceName, pr, localURL, error) in
-            
-            print("onFinishReceiving",resourceName,pr,localURL,error)
-        }
-
-        // On small package of data receive.
-        bonjour.onReceive = { data, peer in
-            
-            print("onReceive",data,peer,String(decoding: data, as: UTF8.self))
-        }
-
-        // On new peer discovery.
-        bonjour.onPeerDiscovery = { peer in
-            
-            print("onPeerDiscovery",peer)
-        }
-
-        // On loss of peer.
-        bonjour.onPeerLoss = { peer in
-            
-            print("onPeerLoss",peer)
-        }
-
-        // On connection to peer.
-        bonjour.onPeerConnection = { peer in
-            
-            print("onPeerConnection",peer)
-        }
-
-        // On disconnection from peer.
-        bonjour.onPeerDisconnection = { peer in
-            
-            print("onPeerDisconnection",peer)
-        }
-
-        // On update of list of available peers.
-        bonjour.onAvailablePeersDidChange = { availablePeers in
-            
-            print("availablePeers",availablePeers)
-        }
-        
         SimitURLProtocol.delegate = self
     }
     
@@ -136,9 +82,14 @@ extension SimitLoading:SimitURLProtocolDelegate {
             
             print("==========DATA=========",data.toString() ?? "")
         }
-        bonjour.broadcast(data.toString()?.data(using: .utf8) ?? Data())
         packageData.response.responseBody = data
         
+        do {
+            let dataString = try packageData.toJSON()
+            bonjour.broadcast(dataString.data(using: .utf8) ?? Data())
+        }catch{
+            print("Package toJSON error")
+        }
         
     }
     

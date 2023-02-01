@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SimitRequestPackage {
+struct SimitRequestPackage:Codable {
     
     var appName:String = ""
     var appVersion:String = ""

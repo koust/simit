@@ -154,3 +154,13 @@ extension Dictionary {
         return Result { try JSONSerialization.data(withJSONObject: self) }
     }
 }
+
+
+extension Encodable {
+    /// Converting object to postable JSON
+    func toJSON(_ encoder: JSONEncoder = JSONEncoder()) throws -> String {
+        let data = try encoder.encode(self)
+        let result = String(decoding: data, as: UTF8.self)
+        return result
+    }
+}
