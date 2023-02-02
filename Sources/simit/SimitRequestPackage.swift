@@ -28,6 +28,7 @@ struct SimitRequestURL:Codable {
     //var requestHeader:[AnyHashable:Any]?
     var requestBody:Data?
     var url:String?
+    var statusCode:Int?
     var httpMethod:String?
 }
 

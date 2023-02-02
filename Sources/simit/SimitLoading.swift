@@ -130,7 +130,7 @@ extension SimitLoading:SimitURLProtocolDelegate {
         simitResponse.url = response.url?.absoluteString ?? "UNKNOWN RESPONSE URL"
         //simitResponse.responseHeader = (response as? HTTPURLResponse)?.allHeaderFields
         simitResponse.statusCode = (response as? HTTPURLResponse)?.statusCode
-        
+        packageData.request.statusCode = (response as? HTTPURLResponse)?.statusCode
         
         packageData.response = simitResponse
     }
