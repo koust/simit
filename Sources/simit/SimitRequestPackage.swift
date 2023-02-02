@@ -15,8 +15,11 @@ struct SimitRequestPackage:Codable {
     var phoneModel:String = ""
     var bundleID:String = ""
     var deviceID:String = ""
+    var deviceName:String = ""
+    var deviceVersion:String = ""
     var request:SimitRequestURL!
     var response:SimitResponseURL!
+    var time:Date = Date()
     
 }
 
