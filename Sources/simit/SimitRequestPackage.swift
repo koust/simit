@@ -19,7 +19,7 @@ struct SimitRequestPackage:Codable {
     var deviceVersion:String = ""
     var request:SimitRequestURL!
     var response:SimitResponseURL!
-    var time:Double = Date().timeIntervalSince1970
+    var time:Double
     
 }
 

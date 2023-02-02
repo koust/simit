@@ -97,6 +97,7 @@ public class SimitLoading: NSObject {
         packageData.deviceID = self.getDeviceID()
         packageData.deviceName = self.getDeviceName()
         packageData.deviceVersion = self.getDeviceVersion()
+        packageData.time =  Date().timeIntervalSince1970
     }
 }
 
