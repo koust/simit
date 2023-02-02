@@ -67,11 +67,19 @@ public class SimitLoading: NSObject {
         return bundleID ?? "unknown bundleID"
     }
     
+    
+    private func getDeviceID() -> String {
+        let deviceID = (UIDevice.current.identifierForVendor?.uuidString)
+        
+        return deviceID ?? "unknown deviceID"
+    }
+    
     private func setDevicePackageData(){
         packageData.appName = self.getAppName()
         packageData.appVersion = self.getApppVersion()
         packageData.phoneModel = self.getPhoneModel()
         packageData.bundleID = self.getBundleID()
+        packageData.deviceID = self.getDeviceID()
     }
 }
 
